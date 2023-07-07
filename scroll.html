@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div  class= "Lorem"style="width: 200px; height: 100px; overflow-y: scroll"> 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+     </div>
+
+<script>
+    //DIV 의 스크롤바 내린양 + 눈에보이는 DIV 높이== DIV의 실제 높이
+    $('.Lorem').on('scroll', function(){
+        var 스크롤양 = document.querySelector('.Lorem').scrollTop;
+        var 실제높이 = document.querySelector('.Lorem').scrollHeight;
+        var 높이 = document.querySelector('.Lorem').clinetHeight;
+        console.log(스크롤양, 실제높이);
+    })
+
+</script>  
+
+
+<script>
+
+    페이지 스크롤바 100이상 내리면 폰트사이즈 줄이기 
+    if(windows.scrollY > 100){
+        $('navi').css('font-size', '20px');
+    }
+
+</script>
+</body>
+
+</html>

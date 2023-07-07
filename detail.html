@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="container mt-3">
+            <div class="card p-3">
+               <span class="a">상품명</span> 
+               <span class ="b">가격</span> 
+            </div>
+     </div>
+</body>
+
+
+
+<script>
+var car3 = {name : '소나타 ' ,price : [50000, 3000, 4000] }
+
+document.querySelector('.a').innerHTML = car3.name;
+document.querySelector('.b').innerHTML = car3.price[0];
+
+console.log(car3['price'])
+</script>
+
+
+
+<script>
+
+// var car = '소나타';
+// var carPrice = "50000";
+// var carColor = "white";
+
+
+// var car = [자료, 자료2, 자료3];
+var car = ['소나타', 5000, 'white'];
+car[0] = '아반떼';
+
+var car2 = {name : '소나타',  price:50000} //object자료형 여러개 쓸때 , 이름이붙여서 저장가능한게 장점 꼭붙여얗함
+//object자료형 = key value 형태 
+
+console.log(car2['name']);
+console.log(car2.name);
+//array 자료형 순서대로 저장
+//object 자료형 이름을 붙여서 저장  car.sort(); 이건 정렬 car.slice(1,3) 잘라주기 
+
+console.log(car);
+</script>
+</html>
