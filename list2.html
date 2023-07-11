@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+      
+            <!-- <div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>Card title</h5>
+              <p>가격 : 70000</p>
+            </div> -->
+      
+        </div>
+      </div> 
+
+      <div class="container">
+      <button class="btn btn-danger" id="more">더보기</button>
+      </div>
+    
+      
+      <script>
+        var products = [
+          { id : 0, price : 70000, title : 'Blossom Dress' },
+          { id : 1, price : 50000, title : 'Springfield Shirt' },
+          { id : 2, price : 60000, title : 'Black Monastery' }
+        ];
+        
+        products.forEach((a, i)=>{
+            var 템플릿 = 
+            `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+            </div>`;
+            $('.row').append(템플릿);     
+        })
+        
+       
+      </script> 
+
+      <script>
+
+        var count = 0; 
+
+        $('#more').click(function(){
+            $.get('https://codingapple1.github.io/js/more1.json').done((data)=>{
+            console.log(data);
+            
+            count++;
+
+            data.forEach((a, i)=>{
+                var 템플릿 = 
+            `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+            </div>`;
+            $('.row').append(템플릿);     
+            })
+
+            if(count == 2){
+                data.forEach((b, i)=>{
+                var 템플릿 = 
+            `<div class="col-sm-4">
+              <img src="https://codingapple1.github.io/js/more2.json" class="w-100">
+              <h5>${b.title}</h5>
+              <p>가격 : ${b.price}</p>
+            </div>`;
+            $('.row').append(템플릿);     
+            })
+            }
+           
+            console.log(count);
+         })
+        })
+
+        
+           
+
+      </script>
+</body>
+</html>
